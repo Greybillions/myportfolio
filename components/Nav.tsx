@@ -27,7 +27,7 @@ const Nav = () => {
         </ul>
         <a
           href='#'
-          className='text-lg flex items-center justify-center font-semibold px-4 bg-gray-700 transition-all hover:scale-105 text-white rounded-full'
+          className='text-lg flex items-center justify-center font-semibold px-4 py-1 bg-gray-700 transition-all hover:scale-105 text-white rounded-full'
         >
           <BsDownload className='mr-2 text-[16px]' />
           Resume
