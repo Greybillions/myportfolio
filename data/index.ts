@@ -41,7 +41,7 @@ export const projects = [
     demo: 'https://babytoshicto.com/',
   },
   {
-    name: 'ShopWith GoMalL (in-progress)',
+    name: 'ShopWith GoMalL - (in-progress)',
     description: 'Description 4',
     image: '/project4.png',
     tools: ['React', 'Tailwind'],
@@ -56,5 +56,33 @@ export const projects = [
     github:
       'https://github.com/Greybillions/javascript-sandbox/tree/main/sudoku-solver',
     demo: 'https://sudoku-solver-grey.vercel.app/',
+  },
+];
+
+export const socialLinks = [
+  {
+    id: 0,
+    name: 'Github',
+    href: 'https://github.com/Greybillions',
+  },
+  {
+    id: 1,
+    name: 'Linkedin',
+    href: 'https://www.linkedin.com/in/graham-boyle/',
+  },
+  {
+    id: 2,
+    name: 'X',
+    href: 'https://X.com/Dev__Grey',
+  },
+  {
+    id: 3,
+    name: 'Hashnode',
+    href: 'https://greyboyle.hashnode.dev/',
+  },
+  {
+    id: 4,
+    name: 'Dev.to',
+    href: 'https://dev.to/greybillions',
   },
 ];

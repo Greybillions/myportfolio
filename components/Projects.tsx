@@ -17,22 +17,27 @@ const Projects = () => {
       <h2 className='caprasimo-regular uppercase text-center md:text-left text-3xl lg:text-6xl mt-5 md:ml-10'>
         Projects
       </h2>
-      <div className='flex flex-col md:flex-row flex-wrap gap-10 items-center justify-center  mt-10'>
+      <div className='flex flex-col md:flex-row flex-wrap gap-12 items-center justify-center  mt-10'>
         {projects.map((project, index) => (
           <div
             key={index}
-            className='flex flex-col gap-4 items-center justify-between md:w-[30%]'
+            className='flex flex-col gap-1 items-center justify-between md:w-[30%]'
           >
-            <div className='text-left'>
-              <h3 className='caprasimo-regular text-xl '>{project.name}</h3>
+            <div className='text-left w-full'>
+              <h3 className='caprasimo-regular text-xl border-b border-[#c6ff00]'>
+                {project.name}
+              </h3>
               <p className='pretty-regular'>{project.description}</p>
             </div>
 
-            <div className='flex gap-4 items-center justify-start'>
+            <div className='flex gap-4 items-center justify-start w-full'>
               <p className='pretty-regular font-semibold'>Tools used:</p>
               <ul className='flex gap-2'>
                 {project.tools.map((tool, index) => (
-                  <li key={index} className='pretty-regular text-xl'>
+                  <li
+                    key={index}
+                    className='pretty-regular text-xl text-[#c6ff00]'
+                  >
                     {tool === 'React' ? (
                       <FaReact />
                     ) : tool === 'Tailwind' ? (
@@ -54,7 +59,7 @@ const Projects = () => {
                 href={project.github}
                 target='_blank'
                 rel='noreferrer'
-                className='pretty-regular'
+                className='pretty-regular text-[#c6ff00]'
               >
                 Github
               </a>
@@ -62,9 +67,9 @@ const Projects = () => {
                 href={project.demo}
                 target='_blank'
                 rel='noreferrer'
-                className='pretty-regular'
+                className='pretty-regular text-[#c6ff00]'
               >
-                Demo
+                {index === 2 ? 'Live Website' : 'Demo'}
               </a>
             </div>
 

@@ -5,7 +5,7 @@ import { heroText } from '@/data';
 
 const Hero = () => {
   return (
-    <section className='px-4 md:h-screen h-full w-full my-1 md:my-3'>
+    <section className='px-4 md:h-screen h-full w-full'>
       <div className='flex flex-col w-full h-full md:justify-around md:gap-6 md:flex-row items-center'>
         <div className='md:w-[50%]'>
           <h1 className='caprasimo-regular uppercase mt-10 md:mt-0 text-center text-6xl lg:text-8xl'>
@@ -17,9 +17,12 @@ const Hero = () => {
         </div>
 
         <div>
-          <Image src={heroImg} alt='grey' />
+          <Image
+            src={heroImg}
+            alt='image Designed by https://www.freepik.com/'
+          />
         </div>
-        <p className='md:hidden flex pretty-regular font-semibold text-left text-2xl'>
+        <p className='md:hidden flex pretty-regular font-semibold text-left text-xl md:text-2xl'>
           {heroText}
         </p>
       </div>
