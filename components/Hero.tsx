@@ -20,6 +20,7 @@ const Hero = () => {
           <Image
             src={heroImg}
             alt='image Designed by https://www.freepik.com/'
+            priority
           />
         </div>
         <p className='md:hidden flex pretty-regular font-semibold text-left text-xl md:text-2xl'>

@@ -13,7 +13,7 @@ export const navLinks = [
 ];
 
 export const heroText =
-  "Hi, I'm Graham Boyle, Grey for short, I build Web2 and Web3 frontend applications. I write easy to understand technical docs. Sometimes I design, and very rarely I work on the backend. I ensure            that the apps I deliver are very fast, easy to navigate, and responsive.";
+  "Hi, I'm Graham Boyle, Grey for short, I build Web2 and Web3 web applications and write easy to understand technical documentation. I design and sometimes work on the backend. I ensure that the apps I deliver are fast, secure, user-friendly and easy to navigate.";
 
 export const projects = [
   {
@@ -56,6 +56,14 @@ export const projects = [
     github:
       'https://github.com/Greybillions/javascript-sandbox/tree/main/sudoku-solver',
     demo: 'https://sudoku-solver-grey.vercel.app/',
+  },
+  {
+    name: 'Ndamzi Art Portfolio',
+    description: 'Description 6',
+    image: '/project6.png',
+    tools: ['JavaScript'],
+    github: 'https://github.com/Greybillions/allwell-portfolio',
+    demo: 'https://ndamzi-artportfolio.vercel.app/',
   },
 ];
 
