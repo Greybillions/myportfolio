@@ -94,7 +94,8 @@ const Nav = () => {
         </ul>
         <div className='flex flex-col gap-4 mt-6 px-6'>
           <a
-            href='#'
+            href='/grahamboyle-resume.pdf'
+            download='grahamboyle-resume.pdf'
             className='text-lg flex items-center justify-center font-semibold px-4 py-2 bg-gray-700 transition-all hover:scale-105 text-white rounded-full'
           >
             <BsDownload className='mr-2 text-[16px]' />
