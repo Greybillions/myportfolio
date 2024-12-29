@@ -18,7 +18,8 @@ export const heroText =
 export const projects = [
   {
     name: 'Iphone 15 Website Clone',
-    description: 'Description 1',
+    description:
+      'A responsive iPhone 15 website clone featuring GSAP animations and Three.js 3D effects for an interactive experience.',
     image: '/project1.png',
     tools: ['React', 'Three.js', 'Tailwind'],
     github: 'https://github.com/Greybillions/apple-website-clone',
@@ -26,7 +27,8 @@ export const projects = [
   },
   {
     name: 'Brainwave Landing Page',
-    description: 'Description 2',
+    description:
+      'A sleek, responsive Brainwave landing page with smooth animations and interactive elements.',
     image: '/project2.png',
     tools: ['React', 'Tailwind'],
     github: 'https://github.com/Greybillions/brainwave',
@@ -34,7 +36,8 @@ export const projects = [
   },
   {
     name: 'BabyToshi Landing Page',
-    description: 'Description 3',
+    description:
+      'A Web3-focused BabyToshi CTO landing page with a sleek design, interactive features, and smooth animations, built using React and GSAP.',
     image: '/project3.png',
     tools: ['React', 'Tailwind'],
     github: 'https://github.com/Greybillions/babytoshi',
@@ -42,7 +45,8 @@ export const projects = [
   },
   {
     name: 'ShopWith GoMalL - (in-progress)',
-    description: 'Description 4',
+    description:
+      'An e-commerce platform currently under development, leveraging React and Next.js to create a user-friendly and responsive shopping experience.',
     image: '/project4.png',
     tools: ['React', 'Tailwind'],
     github: '',
@@ -50,7 +54,8 @@ export const projects = [
   },
   {
     name: 'Soduku Solver',
-    description: 'Description 5',
+    description:
+      'A web application that solves Sudoku puzzles using a backtracking algorithm, providing an interactive and intuitive solution for users',
     image: '/project5.png',
     tools: ['JavaScript'],
     github:
@@ -59,7 +64,8 @@ export const projects = [
   },
   {
     name: 'Ndamzi Art Portfolio',
-    description: 'Description 6',
+    description:
+      'A showcase for digital art in the Web3 space, highlighting various digital creations through a modern, interactive portfolio.',
     image: '/project6.png',
     tools: ['JavaScript'],
     github: 'https://github.com/Greybillions/allwell-portfolio',

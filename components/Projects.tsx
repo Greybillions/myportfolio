@@ -27,9 +27,38 @@ const Projects = () => {
               <h3 className='caprasimo-regular text-xl border-b border-[#c6ff00]'>
                 {project.name}
               </h3>
-              <p className='pretty-regular'>{project.description}</p>
+              <p className='pretty-regular text-sm my-2'>
+                {project.description}
+              </p>
             </div>
 
+            <div className='flex items-center justify-between w-full'>
+              <a
+                href={project.github}
+                target='_blank'
+                rel='noreferrer'
+                className='pretty-regular text-[#c6ff00]'
+              >
+                Github
+              </a>
+              <a
+                href={project.demo}
+                target='_blank'
+                rel='noreferrer'
+                className='pretty-regular text-[#c6ff00]'
+              >
+                {index === 2 ? 'Live Website' : 'Demo'}
+              </a>
+            </div>
+
+            <div className='my-2'>
+              <Image
+                src={project.image}
+                alt={project.name}
+                height={300}
+                width={400}
+              />
+            </div>
             <div className='flex gap-4 items-center justify-start w-full'>
               <p className='pretty-regular font-semibold'>Tools used:</p>
               <ul className='flex gap-2'>
@@ -52,34 +81,6 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className='flex items-center justify-between w-full'>
-              <a
-                href={project.github}
-                target='_blank'
-                rel='noreferrer'
-                className='pretty-regular text-[#c6ff00]'
-              >
-                Github
-              </a>
-              <a
-                href={project.demo}
-                target='_blank'
-                rel='noreferrer'
-                className='pretty-regular text-[#c6ff00]'
-              >
-                {index === 2 ? 'Live Website' : 'Demo'}
-              </a>
-            </div>
-
-            <div>
-              <Image
-                src={project.image}
-                alt={project.name}
-                height={300}
-                width={400}
-              />
             </div>
           </div>
         ))}
