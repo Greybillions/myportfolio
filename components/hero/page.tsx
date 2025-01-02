@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
-import heroImg from '../public/hero.svg';
+import heroImg from '@/public/hero.svg';
 import { heroText } from '@/data';
 
 const Hero = () => {
