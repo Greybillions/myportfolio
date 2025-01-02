@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { projects } from '../data';
+import { projects } from '@/data';
 
 import Image from 'next/image';
 
