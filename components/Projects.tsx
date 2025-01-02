@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { projects } from '../data';
 
 import Image from 'next/image';
@@ -33,22 +34,22 @@ const Projects = () => {
             </div>
 
             <div className='flex items-center justify-between w-full'>
-              <a
+              <Link
                 href={project.github}
                 target='_blank'
                 rel='noreferrer'
                 className='pretty-regular text-[#c6ff00]'
               >
                 Github
-              </a>
-              <a
+              </Link>
+              <Link
                 href={project.demo}
                 target='_blank'
                 rel='noreferrer'
                 className='pretty-regular text-[#c6ff00]'
               >
                 {index === 2 ? 'Live Website' : 'Demo'}
-              </a>
+              </Link>
             </div>
 
             <div className='my-2'>

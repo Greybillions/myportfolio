@@ -41,7 +41,6 @@ export default function RootLayout({
             tag('config', 'G-HMMW14WL9M');
           `}
         </Script>
-        <link rel='icon' href='/favicon.png' />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
