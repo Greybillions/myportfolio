@@ -48,7 +48,7 @@ const Projects = () => {
                 rel='noreferrer'
                 className='pretty-regular text-[#c6ff00]'
               >
-                {index === 2 && 6 ? 'Live Website' : 'Demo'}
+                {index === 2 || index === 5 ? 'Live Website' : 'Demo'}
               </Link>
             </div>
 
