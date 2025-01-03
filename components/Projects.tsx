@@ -18,7 +18,7 @@ const Projects = () => {
       <h2 className='caprasimo-regular uppercase text-center md:text-left text-3xl lg:text-6xl mt-5 md:ml-10'>
         Projects
       </h2>
-      <div className='flex flex-col md:flex-row flex-wrap gap-12 items-center justify-center  mt-10'>
+      <div className='flex flex-col md:flex-row flex-wrap gap-12 items-center   justify-center  mt-10'>
         {projects.map((project, index) => (
           <div
             key={index}

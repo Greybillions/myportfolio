@@ -4,11 +4,12 @@ export const navLinks = [
   {
     name: 'Projects',
     href: '#projects',
+    target: '_self',
   },
   {
     name: 'Blog',
-    href: 'https://greyboyle.hashnode.dev/',
-    target: '_blank',
+    href: '/blog',
+    target: '_self',
   },
 ];
 

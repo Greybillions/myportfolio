@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer';
-import Hero from '@/components/hero/page';
-
+import Hero from '@/components/Hero';
 import Nav from '@/components/Nav';
 import Projects from '@/components/Projects';
 
