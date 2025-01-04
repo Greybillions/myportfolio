@@ -18,7 +18,11 @@ const Nav = () => {
       id='nav'
       className='flex relative w-full justify-between items-center py-4 px-4'
     >
-      <Link href='#nav' className='caprasimo-regular text-2xl block'>
+      <Link
+        id='#nav'
+        href='https://grahamboyle-dev.vercel.app'
+        className='caprasimo-regular text-2xl block'
+      >
         Graham.dev
       </Link>
 
@@ -96,13 +100,13 @@ const Nav = () => {
           <Link
             href='/grahamboyle-resume.pdf'
             download='grahamboyle-resume.pdf'
-            className='inline-flex items-center justify-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-1 rounded-lg font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
+            className='inline-flex items-center justify-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
           >
-            <BsDownload className='mr-2 text-[16px]' />
             Resume
+            <BsDownload className='ml-2 text-[16px]' />
           </Link>
           <Link
-            className='inline-flex text-center justify-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-1 rounded-lg font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
+            className='inline-flex text-center justify-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
             href='/contact'
             rel='noopener noreferrer'
           >

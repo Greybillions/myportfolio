@@ -1,9 +1,12 @@
 // data
 
+export const contactTitle =
+  ' I am currently available to take on new projects, so feel free to reach send a message about anything you want me to work on. You can contact me anytime.';
+
 export const navLinks = [
   {
     name: 'Projects',
-    href: '#projects',
+    href: '/project',
     target: '_self',
   },
   {

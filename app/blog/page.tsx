@@ -7,6 +7,8 @@ import BackButton from '@/components/BackNav';
 import LoadingSkeleton from '@/components/LoadingSkeleton';
 import { Suspense } from 'react';
 import { fetchHashnodePosts } from '@/data';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 const Blog = async () => {
   try {
@@ -14,13 +16,15 @@ const Blog = async () => {
     const posts = data?.data?.publication?.posts?.edges || [];
 
     return (
-      <div className='min-h-screen my-6 max-w-7xl container mx-auto'>
-        <div className='w-full ml-2.5 md:ml-0'>
-          <BackButton />
-        </div>
+      <div className='min-h-screen  max-w-7xl container mx-auto'>
+        <Nav />
+
         <div className='p-6 sm:px-32 md:px-48 lg:px-48 xl:px-48'>
-          <h1 className='text-4xl my-4 font-bold mb-4 text-center'>
-            Latest Blog Posts
+          <div className='w-full ml-2.5 md:ml-0'>
+            <BackButton />
+          </div>
+          <h1 className='text-4xl my-4 font-bold caprasimo-regular uppercase mb-4 text-center'>
+            Blog Posts
           </h1>
           <div className='grid grid-cols-1 md:flex md:flex-col lg:flex-col gap-6'>
             {posts.map(({ node: post }) => (
@@ -58,6 +62,7 @@ const Blog = async () => {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     );
   } catch (error) {
