@@ -101,3 +101,77 @@ export const socialLinks = [
     href: 'https://dev.to/greybillions',
   },
 ];
+
+// Define types for the Hashnode API response
+type HashnodePost = {
+  node: {
+    title: string;
+    brief: string;
+    slug: string;
+    url: string;
+    coverImage: {
+      url: string;
+    };
+  };
+};
+
+type HashnodeResponse = {
+  data?: {
+    publication?: {
+      posts: {
+        edges: HashnodePost[];
+      };
+    };
+  };
+};
+
+// Updated query to include coverImage and fetch 6 posts
+const getPosts = `
+  query Publication(
+    $id: ObjectId="652ee4db10ce1729cebad250"
+  ) {
+    publication(
+      id: $id
+    ) {
+      posts(first: 6) {
+        edges {
+          node {
+            title,
+            brief,
+            slug,
+            url,
+            coverImage {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+// Function to fetch posts from Hashnode
+export const fetchHashnodePosts = async () => {
+  try {
+    const response = await fetch('https://gql.hashnode.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: getPosts,
+      }),
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch posts');
+    }
+
+    const data: HashnodeResponse = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
+  }
+};

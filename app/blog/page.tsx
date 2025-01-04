@@ -1,84 +1,12 @@
 'use server';
 
 import React from 'react';
+import { LuExternalLink } from 'react-icons/lu';
 import Image from 'next/image';
 import BackButton from '@/components/BackNav';
 import LoadingSkeleton from '@/components/LoadingSkeleton';
 import { Suspense } from 'react';
-
-// Define types for the Hashnode API response
-type HashnodePost = {
-  node: {
-    title: string;
-    brief: string;
-    slug: string;
-    url: string;
-    coverImage: {
-      url: string;
-    };
-  };
-};
-
-type HashnodeResponse = {
-  data?: {
-    publication?: {
-      posts: {
-        edges: HashnodePost[];
-      };
-    };
-  };
-};
-
-// Updated query to include coverImage and fetch 6 posts
-const getPosts = `
-  query Publication(
-    $id: ObjectId="652ee4db10ce1729cebad250"
-  ) {
-    publication(
-      id: $id
-    ) {
-      posts(first: 6) {
-        edges {
-          node {
-            title,
-            brief,
-            slug,
-            url,
-            coverImage {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-// Function to fetch posts from Hashnode
-const fetchHashnodePosts = async () => {
-  try {
-    const response = await fetch('https://gql.hashnode.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: getPosts,
-      }),
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch posts');
-    }
-
-    const data: HashnodeResponse = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    throw error;
-  }
-};
+import { fetchHashnodePosts } from '@/data';
 
 const Blog = async () => {
   try {
@@ -86,26 +14,28 @@ const Blog = async () => {
     const posts = data?.data?.publication?.posts?.edges || [];
 
     return (
-      <div className='p-6'>
+      <div className='p-6 sm:px-32 md:px-48 lg:px-48 xl:px-64'>
         <BackButton />
-        <h1 className='text-4xl font-bold mb-4'>My Blog</h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <h1 className='text-4xl my-4 font-bold mb-4 text-center'>
+          Latest Blog Posts
+        </h1>
+        <div className='grid grid-cols-1 md:flex md:flex-col lg:flex-col gap-6'>
           {posts.map(({ node: post }) => (
             <div
               key={post.slug}
-              className='bg-white shadow-lg rounded-lg overflow-hidden'
+              className='bg-white shadow-lg md:flex md:flex-col lg:flex-row rounded-lg overflow-hidden border border-gray-200 items-center md:pl-2'
             >
               <Suspense fallback={<LoadingSkeleton />}>
-                <div className='relative w-full h-48'>
+                <div className='relative w-full h-48 rounded'>
                   <Image
                     src={post.coverImage?.url || '/placeholder-image.jpg'}
                     alt={post.title}
                     fill
-                    className='object-cover'
+                    className='object-fit rounded'
                   />
                 </div>
                 <div className='p-6'>
-                  <h2 className='text-xl font-bold mb-2 line-clamp-2'>
+                  <h2 className='text-xl md:text-3xl font-bold mb-2 line-clamp-2'>
                     {post.title}
                   </h2>
                   <p className='text-gray-600 mb-4 line-clamp-3'>
@@ -113,11 +43,11 @@ const Blog = async () => {
                   </p>
                   <a
                     href={post.url}
-                    className='inline-block text-blue-600 hover:text-blue-800 font-semibold hover:underline'
+                    className='inline-flex items-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-1 rounded-lg font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    Read More →
+                    Read More <LuExternalLink />
                   </a>
                 </div>
               </Suspense>
