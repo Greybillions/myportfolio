@@ -25,34 +25,6 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Send data to the third-party API (e.g., Getform)
-    fetch('https://getform.io/f/bqoolmrb', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert('Form submitted successfully!');
-          setFormData({
-            name: '',
-            email: '',
-            message: '',
-          });
-        } else {
-          alert('Something went wrong. Please try again.');
-        }
-      })
-      .catch(() => {
-        alert('An error occurred. Please try again later.');
-      });
-  };
-
   return (
     <div className='w-full h-full bg-gray-700 text-white'>
       <Nav />
@@ -72,7 +44,11 @@ const Contact = () => {
             />{' '}
           </span>
         </p>
-        <form className='space-y-4 mt-4' onSubmit={handleSubmit}>
+        <form
+          className='space-y-4 mt-4'
+          action='https://getform.io/f/bqoolmrb'
+          method='POST'
+        >
           <div>
             <label
               htmlFor='name'
@@ -86,7 +62,7 @@ const Contact = () => {
               name='name'
               value={formData.name}
               onChange={handleChange}
-              className='mt-1 p-2 text-black block focus:outline-none w-full border-gray-300 rounded-md shadow-sm focus:ring-2'
+              className='mt-1 p-2 text-black block focus:outline-none w-full border-gray-300 rounded-md shadow-sm focus:ring-2 bg-gray-300'
               required
             />
           </div>
@@ -103,7 +79,7 @@ const Contact = () => {
               name='email'
               value={formData.email}
               onChange={handleChange}
-              className='mt-1 block p-2 text-black w-full border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2'
+              className='mt-1 block p-2 text-black w-full bg-gray-300 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2'
               required
             />
           </div>
@@ -120,13 +96,13 @@ const Contact = () => {
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              className='mt-1 p-2 text-black block w-full border-gray-300 rounded-md shadow-sm focus:outline-none'
+              className='mt-1 p-2 text-black block w-full border-gray-300  bg-gray-300 rounded-md shadow-sm focus:outline-none'
               required
             />
           </div>
           <button
             type='submit'
-            className='inline-flex items-center gap-2 text-[#c6ff00] bg-gray-900 px-4 py-1 rounded-lg relative font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1 focus:ring-2'
+            className='inline-flex items-center gap-2 text-[#c6ff00] bg-gray-900 px-8 py-1 rounded-lg relative font-semibold hover:bg-gray-800 hover:text-[#c6ff00] transition-all duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1'
           >
             Send
           </button>
