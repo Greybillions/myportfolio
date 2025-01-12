@@ -48,13 +48,13 @@ export const projects = [
     demo: 'https://babytoshicto.com/',
   },
   {
-    name: 'ShopWith GoMalL - (in-progress)',
+    name: 'Qareer - (in-progress)',
     description:
-      'An e-commerce platform currently under development, leveraging React and Next.js to create a user-friendly and responsive shopping experience.',
+      'A Job Tracking platform with a sleek design, interactive features, and smooth animations, built using Next.js, Tailwind, Supabase, Stripe, and Typescript.',
     image: '/project4.png',
-    tools: ['React', 'Tailwind'],
-    github: '',
-    demo: '',
+    tools: ['Next', 'Tailwind', 'Supabase', 'Stripe', 'Typescript', 'clerk'],
+    github: 'https://github.com/Greybillions/qareer',
+    demo: 'https://qareer-q.vercel.app/',
   },
   {
     name: 'Soduku Solver',

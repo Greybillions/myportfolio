@@ -5,9 +5,13 @@ import { projects } from '@/data';
 import Image from 'next/image';
 
 import { TbBrandThreejs } from 'react-icons/tb';
-import { FaReact } from 'react-icons/fa';
-import { RiTailwindCssFill } from 'react-icons/ri';
-import { SiJavascript } from 'react-icons/si';
+import { FaReact, FaCcStripe } from 'react-icons/fa';
+import {
+  RiTailwindCssFill,
+  RiSupabaseFill,
+  RiNextjsFill,
+} from 'react-icons/ri';
+import { SiJavascript, SiClerk, SiTypescript } from 'react-icons/si';
 
 const Projects = () => {
   return (
@@ -76,6 +80,16 @@ const Projects = () => {
                       <TbBrandThreejs />
                     ) : tool === 'JavaScript' ? (
                       <SiJavascript />
+                    ) : tool === 'Supabase' ? (
+                      <RiSupabaseFill />
+                    ) : tool === 'Next' ? (
+                      <RiNextjsFill />
+                    ) : tool === 'clerk' ? (
+                      <SiClerk />
+                    ) : tool === 'Stripe' ? (
+                      <FaCcStripe />
+                    ) : tool === 'Typescript' ? (
+                      <SiTypescript />
                     ) : (
                       tool
                     )}
