@@ -6,12 +6,13 @@ import Image from 'next/image';
 
 import { TbBrandThreejs } from 'react-icons/tb';
 import { FaReact, FaCcStripe } from 'react-icons/fa';
+import { RiTailwindCssFill, RiNextjsFill } from 'react-icons/ri';
 import {
-  RiTailwindCssFill,
-  RiSupabaseFill,
-  RiNextjsFill,
-} from 'react-icons/ri';
-import { SiJavascript, SiClerk, SiTypescript } from 'react-icons/si';
+  SiJavascript,
+  SiClerk,
+  SiFirebase,
+  SiTypescript,
+} from 'react-icons/si';
 
 const Projects = () => {
   return (
@@ -80,8 +81,8 @@ const Projects = () => {
                       <TbBrandThreejs />
                     ) : tool === 'JavaScript' ? (
                       <SiJavascript />
-                    ) : tool === 'Supabase' ? (
-                      <RiSupabaseFill />
+                    ) : tool === 'Firebase' ? (
+                      <SiFirebase />
                     ) : tool === 'Next' ? (
                       <RiNextjsFill />
                     ) : tool === 'clerk' ? (

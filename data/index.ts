@@ -52,7 +52,7 @@ export const projects = [
     description:
       'A Job Tracking platform with a sleek design, interactive features, and smooth animations, built using Next.js, Tailwind, Supabase, Stripe, and Typescript.',
     image: '/project4.png',
-    tools: ['Next', 'Tailwind', 'Supabase', 'Stripe', 'Typescript', 'clerk'],
+    tools: ['Next', 'Tailwind', 'Firebase', 'Stripe', 'Typescript', 'clerk'],
     github: 'https://github.com/Greybillions/qareer',
     demo: 'https://qareer-q.vercel.app/',
   },
